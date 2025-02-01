@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "fast-foundation"
+version = "0.1.0"
+description = ""
+authors = ["omidrk <66273652+omidrk@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.6"
+pydantic = {extras = ["email"], version = "^2.10.4"}
+websockets = "^14.1"
+uvicorn = "^0.34.0"
+uvloop = "^0.21.0"
+python-dotenv = "^1.0.1"
+pyyaml = "^6.0.2"
+pydantic-settings = "^2.7.1"
+aiohttp = "^3.11.11"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+
+[tool.poetry.scripts]
+start = "fast_foundation.src.app:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

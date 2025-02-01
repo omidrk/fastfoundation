@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  dex:
+    image: ghcr.io/dexidp/dex:latest
+    container_name: dex
+    ports:
+      - "5556:5556" # Dex API and web interface
+    volumes:
+      - ./dex/config:/etc/dex # Mount local config to the container
+      - ./dex/data:/data      # Persistent storage for SQLite
+    command: ["dex", "serve", "/etc/dex/config.yaml"]
+    environment:
+      - DEX_LOG_LEVEL=debug # Optional for debugging
